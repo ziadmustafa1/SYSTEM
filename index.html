@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Crud</title>
+</head>
+
+<body class="bg-slate-900 text-white">
+    <div class="crud container mx-auto">
+        <div class="head justify-center text-center p-10 uppercase">
+            <h2 class="font-bold text-4xl">crud</h2>
+            <p class="text-2xl">PRODUCT MANAGEMENT SYSTEM</p>
+        </div>
+        <div class="inputs space-y-3">
+            <input class="bg-gray-950 p-5" placeholder="title" type="text" id="title">
+            <div class="ah flex flex-row space-x-4 p-3">
+                <input onkeyup="getTotal()" class="bg-gray-950  p-6 w-1/5" type="number" placeholder="price" id="price">
+                <input onkeyup="getTotal()" class="bg-gray-950  p-6 w-1/5" type="number" placeholder="taxes" id="taxes">
+                <input onkeyup="getTotal()" class="bg-gray-950  p-6 w-1/5" type="number" placeholder="ads" id="ads">
+                <input onkeyup="getTotal()" class="bg-gray-950  p-6 w-1/5" type="number" placeholder="discount" id="discount">
+                <small id="Total" class="text-center p-3"></small>
+            </div>
+            <input type="number" placeholder="count" class="bg-gray-950  p-6" id="count">
+            <input type="text" placeholder="category" class="bg-gray-950  p-6" id="category">
+            <button id="sabmeet" class="w-full h-10 text-3xl bg-fuchsia-950 hover:tracking-wider hover:bg-fuchsia-900 text-white rounded-full">creat</button>
+        </div>
+        <div class="outputs">
+            <div class="search space-y-3 space-x-2 pt-2">
+                <input type="text" onkeyup="searchdata(this.value)" placeholder="search" id="search" class="bg-gray-950 p-5">
+                <div class="btnsearch flex justify-between">
+                    <button onclick="getserchmood(this.id)" id="searchtitle" class="h-10 text-3xl bg-fuchsia-950 hover:tracking-wider hover:bg-fuchsia-900 text-white rounded-full" style="width: 45%;">search by title</button>
+                    <button onclick="getserchmood(this.id)" id="searchcategory" class="h-10 text-3xl bg-fuchsia-950 hover:tracking-wider hover:bg-fuchsia-900 text-white rounded-full" style="width: 45%;">search by category</button>
+                </div>
+            </div>
+            <div id="deleteAll"></div>
+            <table class="w-full text-center mt-10 uppercase space-x-5 space-y-5"> <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>price</th>
+                <th>taxes</th>
+                <th>ads</th>
+                <th>discount</th>
+                <th>total</th>
+                <th>category</th>
+                <th>update</th>
+                <th>delete</th>
+            </tr>
+                <tbody id="tbody">
+                    
+                </tbody>
+        </table>
+        </div>
+    </div>
+
+    <script src="mian.js"></script>
+</body>
+
+</html>
